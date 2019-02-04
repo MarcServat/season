@@ -23,9 +23,8 @@ class App extends Component {
     if (this.state.errMsg) {
       return <div>Error: {this.state.errMsg}</div>
     }
-    if (!this.state.lat && !this.state.errMsg) {
-      return <Loader></Loader>
-    }
+
+    return <Loader message="Accept location request"></Loader>
 
   }
 }
