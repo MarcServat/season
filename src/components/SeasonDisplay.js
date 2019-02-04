@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './SeasonDisplay.css';
 
 class SeasonDisplay extends Component {
   constructor(props) {
@@ -24,16 +25,13 @@ class SeasonDisplay extends Component {
     }
   }
 
-  getText() {
-    const season = this.getSeason();
-    return this.seasonConf[season];
-  }
-
   render() {
+    const season = this.getSeason();
     return (
-        <div>
-          <i className={`massive ${this.getText().iconName} icon`} />
-          Season Display: <h1>{this.getText().text}</h1>
+        <div className={`season-display ${season}`}>
+          <i className={`icon-left massive ${this.seasonConf[season].iconName} icon`} />
+          Season Display: <h1>{this.seasonConf[season].text}</h1>
+          <i className={`icon-right massive ${this.seasonConf[season].iconName} icon`} />
         </div>
     );
   }
